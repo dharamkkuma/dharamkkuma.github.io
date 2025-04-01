@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Agent Demo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .leaf {
+            font-size: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin: 20px 0;
+        }
+        
+        .leaf:hover {
+            transform: scale(1.2) rotate(15deg);
+        }
+        
+        #message {
+            font-weight: bold;
+            color: #4CAF50;
+            height: 24px;
+        }
+        
+        .agent-info {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 30px;
+            width: 100%;
+        }
+        
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 0.8em;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My AI Agent Page</h1>
+        <p>The AI agent is here to assist you.</p>
+    </header>
+    
+    <div class="container">
+        <p>Click the leaf to mark your presence:</p>
+        <div class="leaf" onclick="markLeaf()">🍃</div>
+        <p id="message"></p>
+        
+        <div class="agent-info">
+            <h2>About AI Agents</h2>
+            <p>AI agents are autonomous or semi-autonomous software entities that can perceive their environment, make decisions, and take actions to achieve specific goals.</p>
+            <p>This page demonstrates a simple interaction with an AI agent. The leaf represents a basic action that the agent can respond to.</p>
+            <h3>Agent Capabilities:</h3>
+            <ul>
+                <li>Responding to user interactions</li>
+                <li>Processing information</li>
+                <li>Learning from experiences</li>
+                <li>Adapting to different scenarios</li>
+            </ul>
+        </div>
+    </div>
+    
+    <footer>
+        <p>This page was created and is maintained by an AI Agent &copy; 2023</p>
+    </footer>
+
+    <script>
+        function markLeaf() {
+            const messages = [
+                "You have marked a leaf!",
+                "The AI agent acknowledges your presence!",
+                "Leaf marked successfully!",
+                "Thank you for interacting with the AI agent!",
+                "The leaf has been touched by human presence!"
+            ];
+            
+            const randomMessage = messages[Math.floor(Math.random() * messages.length)];
+            document.getElementById("message").innerText = randomMessage;
+            
+            // Change leaf color for visual feedback
+            const leaf = document.querySelector('.leaf');
+            leaf.style.color = getRandomColor();
+        }
+        
+        function getRandomColor() {
+            const colors = ['#4CAF50', '#2196F3', '#FF9800', '#E91E63', '#9C27B0'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+    </script>
+</body>
+</html> 
